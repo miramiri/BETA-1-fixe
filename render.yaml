@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: beta1-telegram-client
+    env: python
+    rootDir: BETA-1-main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python selfi.py
+    plan: starter
+    autoDeploy: false
+    healthCheckPath: /
+    disk:
+      name: sessions
+      mountPath: /opt/render/project/src/BETA-1-main
+      sizeGB: 1
